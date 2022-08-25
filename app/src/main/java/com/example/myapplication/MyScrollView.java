@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import androidx.annotation.NonNull;
@@ -35,6 +36,12 @@ public class MyScrollView extends NestedScrollView {
 
         //获取scrollView 最大可滚动的距离
         maxScrollHeight = this.getChildAt(0).getMeasuredHeight() - this.getMeasuredHeight();
+
+        //动态设置外层布局的高度，让整个 tab 页为屏幕高度
+        LinearLayout linearLayout = this.getChildAt(0).findViewById(R.id.linearLayout);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, this.getMeasuredHeight());
+        linearLayout.setLayoutParams(layoutParams);
+
     }
 
 

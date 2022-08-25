@@ -41,12 +41,6 @@ public class MainActivity extends AppCompatActivity {
         int width = dm.widthPixels;         // 屏幕宽度（像素）
         int height = dm.heightPixels;       // 屏幕高度（像素）
         float density = dm.density;         // 屏幕密度（0.75 / 1.0 / 1.5）
-        int densityDpi = dm.densityDpi;     // 屏幕密度dpi（120 / 160 / 240）
-        // 屏幕宽度算法:屏幕宽度（像素）/屏幕密度
-        int screenWidth = (int) (width / density);  // 屏幕宽度(dp)
-        int screenHeight = (int) (height / density);// 屏幕高度(dp)
-
-        Log.d(TAG, String.valueOf(screenHeight));
 
         //动态设置外层布局的高度，让整个 tab 页为屏幕高度
         LinearLayout linearLayout = this.findViewById(R.id.linearLayout);
